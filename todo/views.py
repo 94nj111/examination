@@ -8,7 +8,7 @@ from todo.forms import TaskForm
 
 class TaskListView(generic.ListView):
     model = Task
-    queryset = Task.objects.prefetch_related("tags").order_by("done")
+    queryset = Task.objects.prefetch_related("tags").order_by("done", "-created_time")
     template_name = "todo/index.html"
     paginate_by = 4
 
