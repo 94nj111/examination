@@ -6,6 +6,14 @@
     <ul>
       {% for task in task_list %}
         <strong>{{ task.content }}</strong>
+        <form action="{% url "todo:task-toggle" task.id %}" method="post">
+          {% csrf_token %}
+          {% if task.done %}
+            <input class="btn btn-secondary" type="submit" value="Undo">
+          {% else %}
+            <input class="btn btn-primary" type="submit" value="Complete">
+          {% endif %}
+        </form>
         {% if task.done %}
           <strong style="color: green;">Done</strong>
         {% else %}
