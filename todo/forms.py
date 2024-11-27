@@ -13,11 +13,7 @@ class TaskForm(forms.ModelForm):
             "tags",
         ]
         widgets = {
-            "deadline":
-                forms.DateTimeInput(
-                    attrs={
-                        "type": "datetime-local",
-                        "class": "form-control"
-                    }
-                )
+            "deadline": forms.DateTimeInput(
+                attrs={"type": "datetime-local", "class": "form-control"}
+            )
         }

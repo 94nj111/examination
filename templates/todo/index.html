@@ -2,6 +2,7 @@
 
 {% block content %}
   <h1>TODO list <a class="btn btn-primary link-to-page" href="{% url "todo:task-create" %}">Add</a></h1>
+  <br>
   {% if task_list %}
     <ul>
       {% for task in task_list %}
@@ -13,7 +14,7 @@
             <input class="btn btn-secondary link-to-page" type="submit" value="Undo">
           {% else %}
             <strong style="color: red;">Not done</strong>
-            <input class="btn btn-primary link-to-page" type="submit" value="Complete">
+            <input class="btn btn-success link-to-page" type="submit" value="Complete">
           {% endif %}
         </form>
         <br>

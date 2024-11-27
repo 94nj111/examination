@@ -2,6 +2,7 @@
 
 {% block content %}
   <h1>Tags <a class="btn btn-primary link-to-page" href="{% url "todo:tag-create" %}">Add</a></h1>
+  <br>
   {% if tag_list %}
     <table class="table">
       <tr>
