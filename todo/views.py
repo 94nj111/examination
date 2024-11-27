@@ -40,3 +40,25 @@ class TaskToggleView(generic.View):
             task.done = True
         task.save()
         return redirect("todo:index")
+    
+    
+class TagListView(generic.ListView):
+    model = Tag
+    paginate_by = 4
+    
+    
+class TagCreateView(generic.CreateView):
+    model = Tag
+    fields = ["name"]
+    success_url = reverse_lazy("todo:tag-list")
+    
+    
+class TagUpdateView(generic.UpdateView):
+    model = Tag
+    fields = ["name"]
+    success_url = reverse_lazy("todo:tag-list")
+    
+    
+class TagDeleteView(generic.DeleteView):
+    model = Tag
+    success_url = reverse_lazy("todo:tag-list")
